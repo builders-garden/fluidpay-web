@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
-import { Raleway } from "next/font/google";
-
-const raleway = Raleway({
-  subsets: ["latin"],
-});
+import { raleway } from "../fonts/font";
+import { getAbsoluteUrl } from "@/utils/getAbsoluteUrl";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(getAbsoluteUrl("/")),
   title: "Fluidpay",
-  description: "Crypto made simple, payments made easy.",
+  description: "Stablecoin payments made easy.",
+  openGraph: {
+    url: new URL(getAbsoluteUrl("/")),
+    images: [
+      {
+        url: getAbsoluteUrl("/preview-img.png"),
+        alt: "Fluidpay",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -18,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={raleway.className}>{children}</body>
+    <html lang="en" className={`${raleway.className} font-sans-serif`}>
+      <body>{children}</body>
     </html>
   );
 }

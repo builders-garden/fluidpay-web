@@ -1,0 +1,23 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "JV8PYC9QV4.garden.builders.crumina",
+          "JV8PYC9QV4.garden.builders.crumina"
+        ],
+        "components": [
+          {
+            "/": "/request/*/*",
+            "comment": "Matches all /request URLs. The first wildcard is for the user ID, and the second is for the amount."
+          },
+          {
+            "/": "/send/*",
+            "comment": "Matches all /send URLs. The wildcard is for the user ID."
+          }
+        ]
+      }
+    ]
+  }
+}

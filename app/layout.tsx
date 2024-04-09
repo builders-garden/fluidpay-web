@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   title: "Fluidpay",
   description: "Stablecoin payments made easy.",
   openGraph: {
+    title: "Fluidpay",
+    description: "Stablecoin payments made easy.",
     url: new URL(getAbsoluteUrl("/")),
     images: [
       {

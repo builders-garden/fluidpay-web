@@ -4,8 +4,8 @@
     "details": [
       {
         "appIDs": [
-          "6478694518.garden.builders.crumina",
-          "6478694518.garden.builders.crumina.dev"
+          "J9W73R9TCG.garden.builders.crumina",
+          "J9W73R9TCG.garden.builders.crumina.dev"
         ],
         "components": [
           {
@@ -18,14 +18,14 @@
   },
   "activitycontinuation": {
     "apps": [
-      "6478694518.garden.builders.crumina",
-      "6478694518.garden.builders.crumina.dev"
+      "J9W73R9TCG.garden.builders.crumina",
+      "J9W73R9TCG.garden.builders.crumina.dev"
     ]
   },
   "webcredentials": {
     "apps": [
-      "6478694518.garden.builders.crumina",
-      "6478694518.garden.builders.crumina.dev"
+      "J9W73R9TCG.garden.builders.crumina",
+      "J9W73R9TCG.garden.builders.crumina.dev"
     ]
   }
 }

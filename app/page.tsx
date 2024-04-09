@@ -10,7 +10,7 @@ export default function Home() {
           <span className="text-6xl text-white font-semibold">pay</span>
         </div>
         <div>
-          <p className="text-2xl">Stablecoin payments made easy.</p>
+          <p className="text-2xl">To anyone, from everywhere.</p>
         </div>
       </div>
       <div className="flex flex-col items-center justify-center">

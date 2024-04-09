@@ -4,20 +4,28 @@
     "details": [
       {
         "appIDs": [
-          "JV8PYC9QV4.garden.builders.crumina",
-          "JV8PYC9QV4.garden.builders.crumina"
+          "6478694518.garden.builders.crumina",
+          "6478694518.garden.builders.crumina.dev"
         ],
         "components": [
           {
-            "/": "/request/*/*",
-            "comment": "Matches all /request URLs. The first wildcard is for the user ID, and the second is for the amount."
-          },
-          {
-            "/": "/send/*",
-            "comment": "Matches all /send URLs. The wildcard is for the user ID."
+            "/": "/u/*",
+            "comment": "Matches all /u/* URLs. The first wildcard is for the username, and the second is for the amount."
           }
         ]
       }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": [
+      "6478694518.garden.builders.crumina",
+      "6478694518.garden.builders.crumina.dev"
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "6478694518.garden.builders.crumina",
+      "6478694518.garden.builders.crumina.dev"
     ]
   }
 }

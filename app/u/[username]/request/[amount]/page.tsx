@@ -26,7 +26,9 @@ export default function Request({
           <Button type="button" color="primary" size="lg" radius="full">
             Install Fluidpay
           </Button>
-          <Link href={`fluidpay://u/${username}/request/${amount}`}>
+          <Link
+            href={`https://fluidpay.xyz/u/${username}/request/${amount}`}
+          >
             <Button
               type="button"
               color="primary"

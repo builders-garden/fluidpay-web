@@ -22,7 +22,7 @@ export default function Send({
           <Button type="button" color="primary" size="lg" radius="full">
             Install Fluidpay
           </Button>
-          <Link href={`fluidpay://u/${username}`}>
+          <Link href={`https://fluidpay.xyz/u/${username}`}>
             <Button
               type="button"
               color="primary"

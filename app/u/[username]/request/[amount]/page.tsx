@@ -1,4 +1,5 @@
 import { Button } from "@nextui-org/react";
+import Link from "next/link";
 
 export default function Request({
   params: { username, amount },
@@ -25,15 +26,17 @@ export default function Request({
           <Button type="button" color="primary" size="lg" radius="full">
             Install Fluidpay
           </Button>
-          <Button
-            type="button"
-            color="primary"
-            size="lg"
-            variant="bordered"
-            radius="full"
-          >
-            Already have it? Open in app
-          </Button>
+          <Link href={`fluidpay://u/${username}/request/${amount}`}>
+            <Button
+              type="button"
+              color="primary"
+              size="lg"
+              variant="bordered"
+              radius="full"
+            >
+              Already have it? Open in app
+            </Button>
+          </Link>
           <Button
             type="button"
             color="primary"

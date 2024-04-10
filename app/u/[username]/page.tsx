@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/react";
+import { Button, Link } from "@nextui-org/react";
 
 export default function Send({
   params: { username },
@@ -22,15 +22,17 @@ export default function Send({
           <Button type="button" color="primary" size="lg" radius="full">
             Install Fluidpay
           </Button>
-          <Button
-            type="button"
-            color="primary"
-            size="lg"
-            variant="bordered"
-            radius="full"
-          >
-            Already have it? Open in app
-          </Button>
+          <Link href={`fluidpay://u/${username}`}>
+            <Button
+              type="button"
+              color="primary"
+              size="lg"
+              variant="bordered"
+              radius="full"
+            >
+              Already have it? Open in app
+            </Button>
+          </Link>
           <Button
             type="button"
             color="primary"

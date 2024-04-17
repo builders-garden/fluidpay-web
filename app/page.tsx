@@ -18,13 +18,13 @@ export default function Home() {
       </div>
       <div className="flex flex-col space-y-8">
         <span className="text-xl font-medium text-center">
-          Wanna try it? <br></br>Reach out to{"  "}
+          Wanna try it? <br></br>
           <a
             target="_blank"
-            href="https://t.me/limone_eth"
+            href="https://t.me/+vjYitI1IT9piYWNk"
             className="text-amber-300"
           >
-            limone.eth
+            Join alpha group chat{"  "}
           </a>
         </span>
         <p>

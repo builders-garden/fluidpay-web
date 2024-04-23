@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { raleway } from "../fonts/font";
 import { getAbsoluteUrl } from "@/utils/getAbsoluteUrl";
+import Web3Provider from "@/components/Web3Provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(getAbsoluteUrl("/")),
@@ -29,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${raleway.className} font-sans-serif`}>
-      <body>{children}</body>
+      <body>
+        <Web3Provider>{children}</Web3Provider>
+      </body>
     </html>
   );
 }

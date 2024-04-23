@@ -1,9 +1,10 @@
 "use client"
+import { USDC_BASE_ADDRESS } from "@/utils/constants"
 import { Button, Divider } from "@nextui-org/react"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import Link from "next/link"
-import { erc20Abi } from "viem"
-import { useAccount, useWriteContract } from "wagmi"
+import { erc20Abi, formatUnits } from "viem"
+import { useAccount, useReadContract, useWriteContract } from "wagmi"
 
 export default function Request({
   params: { username, amount },
@@ -24,6 +25,16 @@ export default function Request({
       args: [address as `0x${string}`, BigInt(parseFloat(amount) * 10 ** 6)],
     })
   }
+  const { data, isLoading } = useReadContract({
+    abi: erc20Abi,
+    address: USDC_BASE_ADDRESS,
+    functionName: "balanceOf",
+    args: [address as `0x${string}`],
+  })
+  const notEnoughBalance =
+    !isLoading &&
+    parseFloat(amount!) > parseFloat(formatUnits(data!, 6)?.toString())
+  const canPay = !amount || !isConnected || isLoading || notEnoughBalance
   return (
     <main className="flex min-h-screen flex-col items-center text-center justify-between p-24 space-y-8">
       <div className="flex flex-col space-y-8">
@@ -73,7 +84,17 @@ export default function Request({
             />
           </div>
           <ConnectButton chainStatus={"icon"} label="Pay with another wallet" />
-
+          <div>
+            <span className="text-lg text-mutedGrey">Your balance</span>{" "}
+            <span className="text-lg font-semibold">
+              {isLoading
+                ? "Loading..."
+                : `$${parseFloat(formatUnits(data!, 6).toString()).toFixed(2)}`}
+            </span>
+            {notEnoughBalance && (
+              <p className="text-sm text-red-500">Not enough balance</p>
+            )}
+          </div>
           {isConnected && (
             <Button
               onClick={performPayment}
@@ -81,7 +102,8 @@ export default function Request({
               color="primary"
               size="lg"
               radius="full"
-              className="w-full"
+              className={`${canPay ? "opacity-50 w-full" : "w-full"}`}
+              disabled={canPay}
             >
               Pay
             </Button>

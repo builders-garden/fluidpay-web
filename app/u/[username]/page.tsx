@@ -1,9 +1,10 @@
 "use client"
+import { USDC_BASE_ADDRESS } from "@/utils/constants"
 import { Button, Divider, Link } from "@nextui-org/react"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { useState } from "react"
-import { erc20Abi } from "viem"
-import { useAccount, useWriteContract } from "wagmi"
+import { erc20Abi, formatUnits } from "viem"
+import { useAccount, useReadContract, useWriteContract } from "wagmi"
 
 export default function Send({
   params: { username },
@@ -12,19 +13,29 @@ export default function Send({
 }) {
   const { isConnected, address } = useAccount()
   const { writeContract } = useWriteContract()
-  const [amount, setAmount] = useState()
+  const { data, isLoading } = useReadContract({
+    abi: erc20Abi,
+    address: USDC_BASE_ADDRESS,
+    functionName: "balanceOf",
+    args: [address as `0x${string}`],
+  })
+  const [amount, setAmount] = useState<string>()
   const performPayment = async () => {
-    if (!isConnected) {
+    if (!isConnected || !address || !amount) {
       return
     }
     // Perform payment
     await writeContract({
       abi: erc20Abi,
-      address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      address: USDC_BASE_ADDRESS,
       functionName: "transfer",
-      args: [address as `0x${string}`, BigInt(parseFloat(amount) * 10 ** 6)],
+      args: [address as `0x${string}`, BigInt(parseFloat(amount!) * 10 ** 6)],
     })
   }
+  const notEnoughBalance =
+    !isLoading &&
+    parseFloat(amount!) > parseFloat(formatUnits(data!, 6)?.toString())
+  const canPay = !amount || !isConnected || isLoading || notEnoughBalance
   return (
     <main className="flex min-h-screen flex-col items-center text-center justify-between p-24 space-y-8">
       <div className="flex flex-col space-y-8">
@@ -64,7 +75,12 @@ export default function Send({
               className="text-primary bg-primary h-0.5"
             />
           </div>
-          <ConnectButton chainStatus={"icon"} label="Pay with another wallet" />
+          <ConnectButton
+            accountStatus={"full"}
+            chainStatus={"full"}
+            label="Pay with another wallet"
+            showBalance={false}
+          />
           {isConnected && (
             <>
               <input
@@ -75,12 +91,27 @@ export default function Send({
                 onChange={(e) => setAmount(e.target.value)}
                 className={`text-center bg-transparent text-6xl font-semibold border-0 outline-none appearance-none text-primary`}
               />
+              <div>
+                <span className="text-lg text-mutedGrey">Your balance</span>{" "}
+                <span className="text-lg font-semibold">
+                  {isLoading
+                    ? "Loading..."
+                    : `$${parseFloat(formatUnits(data!, 6).toString()).toFixed(
+                        2
+                      )}`}
+                </span>
+                {notEnoughBalance && (
+                  <p className="text-sm text-red-500">Not enough balance</p>
+                )}
+              </div>
               <Button
                 onClick={performPayment}
                 type="button"
                 color="primary"
                 size="lg"
                 radius="full"
+                className={`${canPay ? "opacity-50" : ""}`}
+                disabled={canPay}
               >
                 Pay
               </Button>

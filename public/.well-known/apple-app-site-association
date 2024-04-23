@@ -4,6 +4,7 @@
     "details": [
       {
         "appIDs": [
+          "J9W73R9TCG.garden.builders.fluidpay",
           "J9W73R9TCG.garden.builders.crumina",
           "J9W73R9TCG.garden.builders.crumina.dev"
         ],
@@ -18,12 +19,14 @@
   },
   "activitycontinuation": {
     "apps": [
+      "J9W73R9TCG.garden.builders.fluidpay",
       "J9W73R9TCG.garden.builders.crumina",
       "J9W73R9TCG.garden.builders.crumina.dev"
     ]
   },
   "webcredentials": {
     "apps": [
+      "J9W73R9TCG.garden.builders.fluidpay",
       "J9W73R9TCG.garden.builders.crumina",
       "J9W73R9TCG.garden.builders.crumina.dev"
     ]

@@ -34,7 +34,7 @@ export default function Send({
   }
   const notEnoughBalance =
     !isLoading &&
-    parseFloat(amount!) > parseFloat(formatUnits(data!, 6)?.toString())
+    parseFloat(amount!) > parseFloat(formatUnits(data ?? BigInt(0), 6))
   const canPay = !amount || !isConnected || isLoading || notEnoughBalance
   return (
     <main className="flex min-h-screen flex-col items-center text-center justify-between p-24 space-y-8">
@@ -96,9 +96,7 @@ export default function Send({
                 <span className="text-lg font-semibold">
                   {isLoading
                     ? "Loading..."
-                    : `$${parseFloat(formatUnits(data!, 6).toString()).toFixed(
-                        2
-                      )}`}
+                    : `$${parseFloat(formatUnits(data!, 6)).toFixed(2)}`}
                 </span>
                 {notEnoughBalance && (
                   <p className="text-sm text-red-500">Not enough balance</p>

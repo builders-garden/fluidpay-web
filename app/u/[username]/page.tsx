@@ -40,8 +40,8 @@ export default function Send({
     <main className="flex min-h-screen flex-col items-center text-center justify-between p-24 space-y-8">
       <div className="flex flex-col space-y-8">
         <div>
-          <span className="text-6xl text-blue-700 font-semibold">fluid</span>
-          <span className="text-6xl text-white font-semibold">pay</span>
+          <span className="text-6xl text-primary font-semibold">P</span>
+          <span className="text-6xl text-white font-semibold">link</span>
         </div>
         <div className="flex flex-col space-y-4">
           <div className="text-xl">
@@ -51,9 +51,9 @@ export default function Send({
         </div>
         <div className="flex flex-col space-y-4 justify-center text-center items-center">
           <Button type="button" color="primary" size="lg" radius="full">
-            Install Fluidpay
+            Install Plink
           </Button>
-          <Link href={`https://fluidpay.xyz/u/${username}`}>
+          <Link href={`https://plink.finance/u/${username}`}>
             <Button
               type="button"
               color="primary"

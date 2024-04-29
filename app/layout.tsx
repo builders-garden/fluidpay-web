@@ -6,16 +6,16 @@ import Web3Provider from "@/components/Web3Provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(getAbsoluteUrl("/")),
-  title: "Fluidpay",
-  description: "Stablecoin payments made easy.",
+  title: "Plink",
+  description: "Your USDC shortcut.",
   openGraph: {
-    title: "Fluidpay",
-    description: "Stablecoin payments made easy.",
+    title: "Plink",
+    description: "Your USDC shortcut.",
     url: new URL(getAbsoluteUrl("/")),
     images: [
       {
         url: getAbsoluteUrl("/preview-img.png"),
-        alt: "Fluidpay",
+        alt: "Plink",
         width: 1200,
         height: 630,
       },

@@ -7,7 +7,7 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ReactNode } from "react";
 
 const config = getDefaultConfig({
-  appName: "Fluidpay",
+  appName: "Plink",
   projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID!,
   chains: [base],
   ssr: true, // If your dApp uses server side rendering (SSR)

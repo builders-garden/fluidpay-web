@@ -1,15 +1,15 @@
-import Image from "next/image";
+import Image from "next/image"
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center text-center justify-between p-16 space-y-8">
       <div className="flex flex-col space-y-4">
         <div>
-          <span className="text-6xl text-blue-700 font-semibold">fluid</span>
-          <span className="text-6xl text-white font-semibold">pay</span>
+          <span className="text-6xl text-primary font-semibold">P</span>
+          <span className="text-6xl text-white font-semibold">link</span>
         </div>
         <div>
-          <p className="text-2xl">To anyone, from everywhere.</p>
+          <p className="text-2xl">Your USDC shortcut.</p>
         </div>
       </div>
       <div className="flex flex-col items-center justify-center">
@@ -21,7 +21,7 @@ export default function Home() {
           <a
             target="_blank"
             href="https://t.me/+vjYitI1IT9piYWNk"
-            className="text-amber-300"
+            className="text-primary"
           >
             Join alpha group chat{"  "}
           </a>
@@ -38,5 +38,5 @@ export default function Home() {
         </p>
       </div>
     </main>
-  );
+  )
 }

@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { raleway } from "../fonts/font";
-import { getAbsoluteUrl } from "@/utils/getAbsoluteUrl";
-import Web3Provider from "@/components/Web3Provider";
+import type { Metadata } from "next"
+import "./globals.css"
+import { raleway } from "../fonts/font"
+import { getAbsoluteUrl } from "@/utils/getAbsoluteUrl"
+import Web3Provider from "@/components/Web3Provider"
 
 export const metadata: Metadata = {
   metadataBase: new URL(getAbsoluteUrl("/")),
   title: "Plink",
   description: "Your USDC shortcut.",
   openGraph: {
-    title: "Plink",
-    description: "Your USDC shortcut.",
+    title: "Plink - Your USDC shortcut",
+    description: "Mobile native wallet making USDC transfers easy.",
     url: new URL(getAbsoluteUrl("/")),
     images: [
       {
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" className={`${raleway.className} font-sans-serif`}>
@@ -34,5 +34,5 @@ export default function RootLayout({
         <Web3Provider>{children}</Web3Provider>
       </body>
     </html>
-  );
+  )
 }

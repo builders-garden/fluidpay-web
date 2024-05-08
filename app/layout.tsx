@@ -6,11 +6,11 @@ import Web3Provider from "@/components/Web3Provider"
 
 export const metadata: Metadata = {
   metadataBase: new URL(getAbsoluteUrl("/")),
-  title: "Plink",
-  description: "Your USDC shortcut.",
+  title: "Plink Your USDC shortcut",
+  description: "Split group expenses with USDC, onchain.",
   openGraph: {
     title: "Plink - Your USDC shortcut",
-    description: "Mobile native wallet making USDC transfers easy.",
+    description: "Split group expenses with USDC, onchain.",
     url: new URL(getAbsoluteUrl("/")),
     images: [
       {

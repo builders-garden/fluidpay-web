@@ -1,20 +1,33 @@
+import { Button } from "@nextui-org/react"
 import Image from "next/image"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center text-center justify-between p-16 space-y-8">
-      <div className="flex flex-col space-y-4">
-        <div>
-          <span className="text-6xl text-primary font-semibold">P</span>
-          <span className="text-6xl text-white font-semibold">link</span>
+    <main className="flex min-h-screen min-w-screen flex-col items-center text-center justify-between p-16 space-y-8 bg-gradient-to-tr from-black from-50% to-primary">
+      <div className="flex flex-row justify-between items-center gap-12">
+        <div className="flex flex-col space-y-8 items-start">
+          <div className="text-left">
+            <span className="text-8xl text-primary font-semibold">P</span>
+            <span className="text-8xl text-white font-semibold">link</span>
+            <p className="text-4xl">Split group expenses with USDC, onchain.</p>
+          </div>
+          <Button color="primary" size="lg" radius="full">
+            <div className="flex flex-row items-center gap-2">
+              <Image
+                alt="apple-logo"
+                src="/apple-logo.svg"
+                width={16}
+                height={16}
+              />
+              Join alpha
+            </div>
+          </Button>
         </div>
-        <div>
-          <p className="text-2xl">Your USDC shortcut.</p>
+        <div className="flex flex-col items-center justify-center">
+          <Image alt="mockup" src="/screens.png" width={600} height={500} />
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center">
-        <Image alt="mockup" src="/mockup.png" width={250} height={500} />
-      </div>
+
       <div className="flex flex-col space-y-8">
         <span className="text-xl font-medium text-center">
           Wanna try it? <br></br>

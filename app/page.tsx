@@ -4,13 +4,13 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-10 w-full max-w-full h-screen sm:h-full items-center text-center justify-between py-16 px-4 sm:px-16 bg-gradient-to-tr from-black from-50% to-primary">
-      <div className="flex gap-4 items-center align-middle h-full">
-        <div className="flex flex-col gap-4 text-left w-1/2 px-2">
+    <main className="flex flex-col gap-10 w-full lg:h-screen h-full items-center text-center justify-between py-16 px-4 sm:px-16 bg-gradient-to-tr from-black from-50% to-primary">
+      <div className="flex flex-row items-center align-middle p-16">
+        <div className="flex flex-col gap-4 lg:text-left text-center lg:items-start items-center px-2">
           <span className="text-7xl text-white font-semibold">
             <span className="text-primary">P</span>link
           </span>
-          <p className="text-white text-3xl sm:text-5xl text-balance z-10">
+          <p className="text-white text-3xl sm:text-5xl text-balance">
             Split group expenses with USDC, onchain.
           </p>
           <Button
@@ -34,9 +34,12 @@ export default function Home() {
             </a>
           </Button>
         </div>
-        <div className="flex flex-col items-center justify-center w-1/2 h-full max-h-full overflow-hidden">
-          <ScreenCarousel />
+        <div className="lg:flex hidden">
+          <ScreenCarousel scale={30} width={960} height={540} />
         </div>
+      </div>
+      <div className="flex lg:hidden">
+        <ScreenCarousel scale={50} width={960} height={540} />
       </div>
       <div className="flex flex-col gap-8 items-center text-center text-white">
         <div className="flex flex-col gap-2">

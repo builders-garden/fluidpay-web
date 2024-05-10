@@ -9,13 +9,11 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 
 const ScreenCarousel = ({
-  scale,
   width,
   height,
 }: {
   width: number
   height: number
-  scale: number
 }) => {
   const imgPaths = [
     "/screens-1.png",
@@ -41,7 +39,7 @@ const ScreenCarousel = ({
                 src={path}
                 width={width}
                 height={height}
-                className={`h-[${scale}%] w-[${scale}%]`}
+                className={`h-[50%] w-[50%] lg:h-[30%] lg:w-[30%]`}
               />
             </div>
           </CarouselItem>

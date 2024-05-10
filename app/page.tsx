@@ -4,8 +4,8 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-10 w-full lg:h-screen h-full items-center text-center justify-between py-16 px-4 sm:px-16 bg-gradient-to-tr from-black from-50% to-primary">
-      <div className="flex flex-row items-center align-middle p-16">
+    <main className="flex flex-col gap-10 w-full lg:h-screen h-full items-center text-center justify-between py-16 px-4 sm:px-16 md:pt-0 bg-gradient-to-tr from-black from-50% to-primary">
+      <div className="flex flex-row items-center align-middle p-16 md:py-16">
         <div className="flex flex-col gap-4 lg:text-left text-center lg:items-start items-center px-2">
           <span className="text-7xl text-white font-semibold">
             <span className="text-primary">P</span>link
@@ -35,13 +35,13 @@ export default function Home() {
           </Button>
         </div>
         <div className="lg:flex hidden">
-          <ScreenCarousel scale={30} width={960} height={540} />
+          <ScreenCarousel width={960} height={540} />
         </div>
       </div>
       <div className="flex lg:hidden">
-        <ScreenCarousel scale={50} width={960} height={540} />
+        <ScreenCarousel width={960} height={540} />
       </div>
-      <div className="flex flex-col gap-8 items-center text-center text-white">
+      <div className="flex flex-col gap-8 md:gap-2 items-center text-center text-white">
         <div className="flex flex-col gap-2">
           <span className="text-xl font-medium">Wanna try it?</span>
           <a

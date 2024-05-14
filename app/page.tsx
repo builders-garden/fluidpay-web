@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-10 w-full lg:h-screen h-full items-center text-center justify-between py-16 px-4 sm:px-16 md:pt-0 bg-gradient-to-tr from-black from-50% to-primary">
+    <main className="flex flex-col gap-10 w-full lg:h-screen h-full items-center text-center justify-between py-16 px-4 sm:px-16 md:pt-0">
       <div className="flex flex-row items-center align-middle p-16 md:py-16">
         <div className="flex flex-col gap-4 lg:text-left text-center lg:items-start items-center px-2">
           <span className="text-7xl text-white font-semibold">

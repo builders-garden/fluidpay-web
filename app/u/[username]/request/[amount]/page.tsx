@@ -44,7 +44,7 @@ export default function Request({
         </div>
         <div className="flex flex-col space-y-4">
           <div className="text-xl">
-            <span className="font-semibold">{username}</span>{" "}
+            <span className="font-semibold text-white">{username}</span>{" "}
             <span className="text-mutedGrey">is requesting</span>
           </div>
           <p className="text-primary text-6xl font-semibold">
@@ -77,7 +77,7 @@ export default function Request({
               dir="horizontal"
               className="text-primary bg-primary h-0.5"
             />
-            <div>or</div>
+            <div className="text-white">or</div>
             <Divider
               dir="horizontal"
               className="text-primary bg-primary h-0.5"
@@ -86,7 +86,7 @@ export default function Request({
           <ConnectButton chainStatus={"icon"} label="Pay with another wallet" />
           <div>
             <span className="text-lg text-mutedGrey">Your balance</span>{" "}
-            <span className="text-lg font-semibold">
+            <span className="text-lg font-semibold text-white">
               {isLoading
                 ? "Loading..."
                 : `$${parseFloat(formatUnits(data!, 6)).toFixed(2)}`}

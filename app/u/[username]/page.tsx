@@ -46,7 +46,7 @@ export default function Send({
         <div className="flex flex-col space-y-4">
           <div className="text-xl">
             <span className="text-mutedGrey">Send to</span>{" "}
-            <span className="font-semibold">{username}</span>
+            <span className="text-white font-semibold">{username}</span>
           </div>
         </div>
         <div className="flex flex-col space-y-4 justify-center text-center items-center">
@@ -69,7 +69,7 @@ export default function Send({
               dir="horizontal"
               className="text-primary bg-primary h-0.5"
             />
-            <div>or</div>
+            <div className="text-white">or</div>
             <Divider
               dir="horizontal"
               className="text-primary bg-primary h-0.5"
@@ -93,7 +93,7 @@ export default function Send({
               />
               <div>
                 <span className="text-lg text-mutedGrey">Your balance</span>{" "}
-                <span className="text-lg font-semibold">
+                <span className="text-lg font-semibold text-white">
                   {isLoading
                     ? "Loading..."
                     : `$${parseFloat(formatUnits(data!, 6)).toFixed(2)}`}

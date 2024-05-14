@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${raleway.className} font-sans-serif`}>
-      <body>
+      <body className="bg-gradient-to-tr from-black from-50% to-primary">
         <Web3Provider>{children}</Web3Provider>
       </body>
     </html>
